@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" onclick="jump()">
+
+
+<head><title>Dan's Double Dutch Game</title>
+  <meta charset="UTF-8">
+  <script src='https://unpkg.com/vue@next'></script>
+  <script src="DDScript.js" defer></script>
+  <link rel="stylesheet" href="DDStyle.css">
+
+</head>
+
+
+<body>
+  
+       <center><h1>Dan's Double Dutch Game</h1></center>
+        
+<div  id='app' v-cloak>
+
+  <div v-if='!name'>
+          <center><label>Please enter your name: <input  type='text' v-model='playerName'></label>
+            <button v-on:click='name = true'>Enter</button></center>
+            
+  </div>
+    <div v-else>
+
+      <div v-if='!choice'>
+
+        <center><p>Hello <b>{{playerName}}</b> let's jump some rope? </p>
+          <!--Tried working with radio buttons, but no time 
+          <label><input type='radio' value='yes' name='yes' v-model='start' :checked='yes == true'> Yes</label>
+          <label><input type='radio' value='no'name='no'> No</label> -->
+          <button v-on:click='choice = true'>Start</button> </center>
+        
+
+      </div>
+      <div v-else>
+        
+        <div id='game' v-if='!gameStart'>
+          <div id='character'>
+
+          </div>
+        <div id='block'>
+
+        </div>
+        
+      </div>
+      <center><p>Click your left mouse button to jump</p>
+        <p>Your Score: <span id="scoreSpan"></span></p>
+
+        <p><b>Psych the game doesn’t work here <b>{{playerName}}</b> . As you can see 
+          it’s animated via the CSS for the movement, but the action controls
+           don’t work properly when mixing with me limited background of Vue JS. 
+           I tried for over 40 hours to get this to work in this sequential 
+           manner and end it with the game. I left it so you can see where it 
+           ended up. Click <a href="dd2.html">Here</a>  to play the function game on a stand alone page.
+            It’ll track your score there, but won’t be able to pull your name. 
+            Simply use the left click of the mouse to jump. There was a cute 
+            little jump rope guy I made with an opensource gif. But, I reduced 
+            it to a block during the troubleshooting process and overwrote it.</b></p></center>
+        
+        
+      </div>
+      
+        
+      
+    </div>
+
+    </div>
+</div>     
+      
+      </body>
+
+</html>
